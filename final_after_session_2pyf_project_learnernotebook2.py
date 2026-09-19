@@ -325,7 +325,7 @@ top_longest_prep_restaurants = average_prep_time.head(10)['restaurant_name']
 
 # Get the cuisine type for these restaurants from the cleaned dataframe
 longest_prep_cuisine = df_cleaned[df_cleaned['restaurant_name'].isin(top_longest_prep_restaurants)]['cuisine_type'].value_counts()
-display(longest_prep_cuisine)
+st.dataframe(longest_prep_cuisine)
 
 average_prep_time = df.groupby(
     ['restaurant_name', 'cuisine_type']
