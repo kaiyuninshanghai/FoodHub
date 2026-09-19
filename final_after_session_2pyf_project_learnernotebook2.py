@@ -40,6 +40,7 @@ The data contains the different data related to a food order. The detailed data 
 """
 
 # import libraries for data manipulation
+import streamlit as st
 import numpy as np
 import pandas as pd
 
