@@ -57,7 +57,7 @@ st.divider()
 
 # returns the first 5 rows
 df.head()
-    st.metric("Avg. Order Cost", f"${df['cost_of_the_order'].mean():.2f}")
+   
 
 st.divider()
 df['total_time'] = df['food_preparation_time'] + df['delivery_time']
