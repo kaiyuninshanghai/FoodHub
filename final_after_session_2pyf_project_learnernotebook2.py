@@ -54,7 +54,7 @@ import seaborn as sns
 # drive.mount('/content/drive')
 
 # read the data
-df = pd.read_csv('/content/foodhub_order.csv')
+df = pd.read_csv('foodhub_order.csv')
 # Add total_time column immediately after loading data
 df['total_time'] = df['food_preparation_time'] + df['delivery_time']
 # returns the first 5 rows
