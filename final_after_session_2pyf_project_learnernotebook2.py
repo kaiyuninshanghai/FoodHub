@@ -381,16 +381,14 @@ plt.show()
 
 ### **Question 8**: Which is the most popular cuisine on weekends? [1 mark]
 """
+weekend_orders = df[df['day_of_the_week'] == 'Weekend']
 
 print(f"Count of orders on the weekend: {len(weekend_orders)}")
 
 df.head()
 
-weekend_orders = df[df['day_of_the_week'] == 'Weekend']
 popular_cuisine_weekend = weekend_orders['cuisine_type'].value_counts()
-display(popular_cuisine_weekend)
-
-weekend_orders = df[df['day_of_the_week'].isin(['Weekend'])]
+st.dataframe(popular_cuisine_weekend)
 
 popular_cuisine = weekend_orders['cuisine_type'].value_counts()
 
