@@ -30,7 +30,7 @@ import seaborn as sns
 # from google.colab import drive
 # drive.mount('/content/drive')
 
-# read the data# read the data
+# Read the data
 df = pd.read_csv('foodhub_order.csv')
 
 # Add total_time column immediately after loading data
