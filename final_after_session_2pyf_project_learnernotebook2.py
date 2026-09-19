@@ -72,9 +72,13 @@ import seaborn as sns
 # from google.colab import drive
 # drive.mount('/content/drive')
 
-# read the data
+# read the data# read the data
 df = pd.read_csv('foodhub_order.csv')
+
 # Add total_time column immediately after loading data
+df['total_time'] = df['food_preparation_time'] + df['delivery_time']
+
+# Dashboard summary
 st.subheader("📊 FoodHub at a Glance")
 
 col1, col2, col3, col4 = st.columns(4)
@@ -89,6 +93,12 @@ with col3:
     st.metric("Restaurants", f"{df['restaurant_name'].nunique():,}")
 
 with col4:
+    st.metric("Avg. Order Cost", f"${df['cost_of_the_order'].mean():.2f}")
+
+st.divider()
+
+# returns the first 5 rows
+df.head()
     st.metric("Avg. Order Cost", f"${df['cost_of_the_order'].mean():.2f}")
 
 st.divider()
