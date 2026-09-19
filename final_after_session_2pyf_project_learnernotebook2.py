@@ -683,7 +683,7 @@ promotional_restaurant_names = promotional_restaurants['restaurant_name'].tolist
 promotional_cuisine_types = df[df['restaurant_name'].isin(promotional_restaurant_names)][['restaurant_name', 'cuisine_type']].drop_duplicates()
 
 print("Cuisine types for promotional restaurants:")
-display(promotional_cuisine_types)
+st.dataframe(promotional_cuisine_types)
 
 cuisine_counts = promotional_cuisine_types['cuisine_type'].value_counts().reset_index()
 cuisine_counts.columns = ['cuisine_type', 'num_restaurants']
