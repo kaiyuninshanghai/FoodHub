@@ -757,7 +757,6 @@ def calculate_revenue(cost):
         return cost * 0.15
     else:
         return 0
-
 df['revenue'] = df['cost_of_the_order'].apply(calculate_revenue)
 
 net_revenue = df['revenue'].sum()
