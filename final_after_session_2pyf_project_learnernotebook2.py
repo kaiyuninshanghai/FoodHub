@@ -44,6 +44,24 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+st.set_page_config(
+    page_title="FoodHub Data Analysis",
+    page_icon="🍴",
+    layout="wide"
+)
+
+st.title("🍴 FoodHub Data Analysis")
+st.markdown(
+    """
+    ### Understanding FoodHub's Customers, Restaurants & Orders
+
+    This interactive dashboard analyzes FoodHub order data to identify
+    customer preferences, restaurant demand, pricing, and delivery patterns.
+    """
+)
+
+st.divider()
+
 # import libraries for data visualization
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -57,6 +75,23 @@ import seaborn as sns
 # read the data
 df = pd.read_csv('foodhub_order.csv')
 # Add total_time column immediately after loading data
+st.subheader("📊 FoodHub at a Glance")
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric("Total Orders", f"{len(df):,}")
+
+with col2:
+    st.metric("Customers", f"{df['customer_id'].nunique():,}")
+
+with col3:
+    st.metric("Restaurants", f"{df['restaurant_name'].nunique():,}")
+
+with col4:
+    st.metric("Avg. Order Cost", f"${df['cost_of_the_order'].mean():.2f}")
+
+st.divider()
 df['total_time'] = df['food_preparation_time'] + df['delivery_time']
 # returns the first 5 rows
 df.head()
